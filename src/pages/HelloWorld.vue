@@ -1,9 +1,10 @@
 <template>
+  <div class="container">
   <div class="columns fixed-sidebar is-centered">
-    <div class="column is-one-fifth has-background-light">
-      
+    <div class="column is-3">
+      <SideBar />
     </div>
-    <div class="column is-two-fifths">
+    <div class="column is-6">
       <div class="tile is-ancestor">
         <div class="tile is-vertical is-parent">
           <QuestionCard class="tile is-child" />
@@ -13,15 +14,19 @@
         </div>
       </div>    
     </div>
+    <div class="column is-3 has-background-light"></div>
+  </div>
   </div>
 </template>
 
 <script>
 import QuestionCard from '../components/feed/QuestionCard.vue'
+import SideBar from '../components/feed/SideBar.vue'
 export default {
   name: 'HelloWorld',
   components: {
-    QuestionCard
+    QuestionCard,
+    SideBar
   },
   data () {
     return {
