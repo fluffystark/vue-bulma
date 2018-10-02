@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="has-background-white-bis">
     <TheNavBar class="is-primary" />
     <router-view/>
   </div>

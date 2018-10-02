@@ -1,15 +1,25 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-import HelloWorld from '@/pages/HelloWorld'
+import VueRouter from 'vue-router'
+import FeedRoutes from './feed'
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
-  ]
+const routes = [
+	...FeedRoutes
+]
+
+const router = new VueRouter({
+	routes,
+	mode: 'history'
 })
+
+router.beforeEach((to, from, next) => {
+    if (to.matched.length) {
+        document.title = to.meta.title;
+        next();
+    } else {
+        location.href = to.fullPath;
+    }
+});
+
+export default router;

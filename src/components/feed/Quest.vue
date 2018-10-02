@@ -1,25 +1,20 @@
 <template>
   <div class="box">
-    <aside class="content">
-      <h3 class="is-3">Trending</h3>
+    <aside class="content has-text-centered">
+      <h3 class="is-3">Daily Quests</h3>
+      <progress class="progress" value="15" max="100">15%</progress>
       <ul class="trend-list">
         <li>
-          <p class="title is-6 has-text-primary trend-tag">
-            #depression
+          <p class="title is-6 has-text-primary">
+            Create a Question
           </p>
-          <p class="subtitle is-6 has-text-grey-dark">10 questions</p>
+          <p class="subtitle is-6 has-text-grey-dark">Incomplete</p>
         </li>
         <li>
-          <p class="title is-6 has-text-primary trend-tag">
-            #alcohol
+          <p class="title is-6 has-text-primary">
+            Answer a Question
           </p>
-          <p class="subtitle is-6 has-text-grey-dark">5 questions</p>
-        </li>
-        <li>
-          <p class="title is-6 has-text-primary trend-tag">
-            #school
-          </p>
-          <p class="subtitle is-size-6 has-text-grey-dark">1 question</p>
+          <p class="subtitle is-6 has-text-grey-dark">Incomplete</p>
         </li>
       </ul>
     </aside>
@@ -28,7 +23,7 @@
 
 <script>
 export default {
-  name: 'SideBar',
+  name: 'Quest',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
@@ -41,8 +36,11 @@ export default {
 
   @import '../../assets/sass/main.scss';
 
-  .trend-tag {
-    font-weight: 500;
+  $box-padding: 0rem;
+
+  .no-padding {
+    border-radius: 6px;
+    padding: $box-padding;
   }
 
   .fixed-sidebar {
